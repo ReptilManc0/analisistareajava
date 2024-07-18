@@ -25,7 +25,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
         Font font = new Font("Georgia", Font.ITALIC, 14);
         UIManager.put("OptionPane.messageFont", font);
-        
+        MostarInventario();
 
     }
     public void MostarInventario(){
@@ -34,55 +34,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
         ControllerDisponibilidadProducto p = new ControllerDisponibilidadProducto();
         jTableInventario.setModel(p.MostrarInventario());
     }
-    /*  private void CargarNombresProveedores() {
-        Proveedores nombreProveedores = new Proveedores();
-        // Obtener los nombres de los proveedores
-        ResultSet resultSetProveedores = nombreProveedores.Consultar("SELECT Nombre FROM proveedor");
-        try {
-            // Crear un modelo para el JComboBox
-            DefaultComboBoxModel<String> modeloCombo = new DefaultComboBoxModel<>();
-
-            // Agregar los nombres de los proveedores al modelo
-            while (resultSetProveedores.next()) {
-                String nombreProveedor = resultSetProveedores.getString("Nombre");
-                modeloCombo.addElement(nombreProveedor);
-            }
-
-            // Asignar el modelo al JComboBox
-            jComboProveedorProducto.setModel(modeloCombo);
-        } catch (SQLException e) {
-            // Manejar cualquier excepción
-            e.printStackTrace();
-        }
-    }
-     */
- /*
-    private void CargarNombresClientes() {
-        Clientes nombreClientes = new Clientes();
-        // Obtener los nombres de los clientes
-        ResultSet resultSetClientes = nombreClientes.Consultar("SELECT Nombre FROM clientes");
-        try {
-            // Crear un modelo para el JComboBox
-            DefaultComboBoxModel<String> modeloCombo = new DefaultComboBoxModel<>();
-
-            // Agregar los nombres de los clientes al modelo
-            while (resultSetClientes.next()) {
-                String nombreCliente = resultSetClientes.getString("Nombre");
-                modeloCombo.addElement(nombreCliente);
-            }
-
-            // Asignar el modelo al JComboBox
-            jComboClienteVentas.setModel(modeloCombo);
-        } catch (SQLException e) {
-            // Manejar cualquier excepción
-            e.printStackTrace();
-        }
-    }
-     */
-    //Validacion de Correo
-    //Validacion general
-
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -94,18 +46,12 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jButton37 = new javax.swing.JButton();
         Productos = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jTextNombreProducto = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jTextPrecioProducto = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTableInventario = new javax.swing.JTable();
         jButton20 = new javax.swing.JButton();
         BotonActualizarProducto = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
-        jTextIDProducto = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -189,32 +135,6 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 200, 780));
 
-        jLabel21.setText("ID");
-
-        jTextNombreProducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNombreProductoActionPerformed(evt);
-            }
-        });
-        jTextNombreProducto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextNombreProductoKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextNombreProductoKeyTyped(evt);
-            }
-        });
-
-        jLabel22.setText("Nombre");
-
-        jTextPrecioProducto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextPrecioProductoKeyReleased(evt);
-            }
-        });
-
-        jLabel23.setText("Precio");
-
         jButton11.setBackground(new java.awt.Color(0, 51, 51));
         jButton11.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
@@ -293,44 +213,22 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
             }
         });
 
-        jTextIDProducto.setEnabled(false);
-        jTextIDProducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextIDProductoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout ProductosLayout = new javax.swing.GroupLayout(Productos);
         Productos.setLayout(ProductosLayout);
         ProductosLayout.setHorizontalGroup(
             ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProductosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ProductosLayout.createSequentialGroup()
-                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ProductosLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel21))
-                            .addComponent(jTextIDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23)))
-                    .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosLayout.createSequentialGroup()
-                            .addComponent(jButton11)
-                            .addGap(12, 12, 12)
-                            .addComponent(BotonActualizarProducto)
-                            .addGap(12, 12, 12)
-                            .addComponent(jButton20)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton30))
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosLayout.createSequentialGroup()
+                        .addComponent(jButton11)
+                        .addGap(12, 12, 12)
+                        .addComponent(BotonActualizarProducto)
+                        .addGap(12, 12, 12)
+                        .addComponent(jButton20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton30))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         ProductosLayout.setVerticalGroup(
@@ -338,23 +236,13 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
             .addGroup(ProductosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextIDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(78, 78, 78)
                 .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
                     .addComponent(jButton20)
                     .addComponent(BotonActualizarProducto)
                     .addComponent(jButton30))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         getContentPane().add(Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, 500));
@@ -393,10 +281,6 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton37ActionPerformed
 
-    private void jTextIDProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDProductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextIDProductoActionPerformed
-
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
        
     }//GEN-LAST:event_jButton30ActionPerformed
@@ -414,28 +298,8 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableInventarioMouseClicked
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
+        
     }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jTextPrecioProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextPrecioProductoKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPrecioProductoKeyReleased
-
-    private void jTextNombreProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreProductoKeyTyped
-        char validar = evt.getKeyChar();
-
-        if (Character.isDigit(validar)) {
-            evt.consume();
-        }         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreProductoKeyTyped
-
-    private void jTextNombreProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreProductoKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreProductoKeyReleased
-
-    private void jTextNombreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreProductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreProductoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,15 +349,9 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
     private javax.swing.JButton jButton37;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTableInventario;
-    private javax.swing.JTextField jTextIDProducto;
-    private javax.swing.JTextField jTextNombreProducto;
-    private javax.swing.JTextField jTextPrecioProducto;
     // End of variables declaration//GEN-END:variables
 }

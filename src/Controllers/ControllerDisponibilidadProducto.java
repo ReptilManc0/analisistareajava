@@ -29,4 +29,9 @@ public class ControllerDisponibilidadProducto {
         }
         return tabla;
     }
+        public void EliminarInventarioyProducto(String id){
+        Inventario inv = new Inventario();
+        inv.CodigoProducto=id;
+        inv.EliminarProducto();
+        }
 }

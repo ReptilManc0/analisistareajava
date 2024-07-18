@@ -28,7 +28,7 @@ public class Inventario {
     public Object FechaEntrega;
     public Object Estado;
 
-    public void AgregarProducto() {
+    public void AgregarProductoInventario() {
         Connection conexion = Conexion.obtenerConexion();
         PreparedStatement stmt = null;
         //Insercion de un nuevo proveedor en la BD

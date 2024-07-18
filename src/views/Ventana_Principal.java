@@ -32,53 +32,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
     }
 
-    /*  private void CargarNombresProveedores() {
-        Proveedores nombreProveedores = new Proveedores();
-        // Obtener los nombres de los proveedores
-        ResultSet resultSetProveedores = nombreProveedores.Consultar("SELECT Nombre FROM proveedor");
-        try {
-            // Crear un modelo para el JComboBox
-            DefaultComboBoxModel<String> modeloCombo = new DefaultComboBoxModel<>();
 
-            // Agregar los nombres de los proveedores al modelo
-            while (resultSetProveedores.next()) {
-                String nombreProveedor = resultSetProveedores.getString("Nombre");
-                modeloCombo.addElement(nombreProveedor);
-            }
-
-            // Asignar el modelo al JComboBox
-            jComboProveedorProducto.setModel(modeloCombo);
-        } catch (SQLException e) {
-            // Manejar cualquier excepción
-            e.printStackTrace();
-        }
-    }
-     */
- /*
-    private void CargarNombresClientes() {
-        Clientes nombreClientes = new Clientes();
-        // Obtener los nombres de los clientes
-        ResultSet resultSetClientes = nombreClientes.Consultar("SELECT Nombre FROM clientes");
-        try {
-            // Crear un modelo para el JComboBox
-            DefaultComboBoxModel<String> modeloCombo = new DefaultComboBoxModel<>();
-
-            // Agregar los nombres de los clientes al modelo
-            while (resultSetClientes.next()) {
-                String nombreCliente = resultSetClientes.getString("Nombre");
-                modeloCombo.addElement(nombreCliente);
-            }
-
-            // Asignar el modelo al JComboBox
-            jComboClienteVentas.setModel(modeloCombo);
-        } catch (SQLException e) {
-            // Manejar cualquier excepción
-            e.printStackTrace();
-        }
-    }
-     */
-    //Validacion de Correo
-    //Validacion general
     public void LimpiarClientes() {
         JtextNombreCliente.setText("");
         jTextDNICliente.setText("");
@@ -1087,7 +1041,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
             .addGroup(VentasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                         .addComponent(jLabel74)
@@ -1113,7 +1067,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
                     .addComponent(jButton33)
                     .addComponent(jButtonVerEntrega)
                     .addComponent(jButtonVerDetallesVentas))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         Pestañas.addTab("Ventas", Ventas);
@@ -1260,9 +1214,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel75))
                             .addComponent(jTextIDEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18))
+                        .addComponent(jTextFieldNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -1279,6 +1231,8 @@ public class Ventana_Principal extends javax.swing.JFrame {
                         .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel18)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Ventas1Layout.createSequentialGroup()
                         .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1305,39 +1259,42 @@ public class Ventana_Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
-                        .addComponent(jLabel75)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextIDEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldDNIEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldCorreoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton15)
-                    .addComponent(BotonActualizarVentas1)
-                    .addComponent(jButton34)
-                    .addComponent(jButtonVerEntrega1)
-                    .addComponent(jButtonVerDetallesVentas1))
-                .addContainerGap(103, Short.MAX_VALUE))
+                        .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
+                                .addComponent(jLabel75)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextIDEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
+                                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldDNIEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventas1Layout.createSequentialGroup()
+                                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldCorreoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)))
+                .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton9)
+                        .addComponent(BotonActualizarVentas1)
+                        .addComponent(jButton34)
+                        .addComponent(jButtonVerEntrega1)
+                        .addComponent(jButtonVerDetallesVentas1))
+                    .addComponent(jButton15))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         Pestañas.addTab("Empleados", Ventas1);
@@ -1793,7 +1750,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JButton BotonActualizarVentas1;
     private javax.swing.JPanel Clientes;
     private javax.swing.JTextField JtextNombreCliente;
-    private javax.swing.JTabbedPane Pestañas;
+    public javax.swing.JTabbedPane Pestañas;
     private javax.swing.JPanel Productos;
     private javax.swing.JPanel Proveedores;
     private javax.swing.JPanel Ventas;
