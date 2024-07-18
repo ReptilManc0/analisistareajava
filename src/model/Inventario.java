@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -25,6 +26,7 @@ public class Inventario {
     public Object Stock;
     public Object CodigoProveedor;
     public Object FechaEntrega;
+    public Object Estado;
 
     public void AgregarProducto() {
         Connection conexion = Conexion.obtenerConexion();
@@ -51,42 +53,30 @@ public class Inventario {
 
     }
 
-    public ArrayList<Inventario> ReadProducto() {
+    public ArrayList<Inventario> ReadInv() {
         ArrayList<Inventario> p = new ArrayList<>();
-        String query = "SELECT "
-                + "    i.CodigoItemInventario,"
-                + "    p.NombreProducto,"
-                + "    i.CodigoProveedor,"
-                + "    i.FechaEntrega,"
-                + "    i.Stock,"
-                + "    CASE"
-                + "        WHEN i.Stock < 5 THEN 'Reabastecer'"
-                + "        ELSE 'Suficiente Stock'"
-                + "    END AS Estado"
-                + "FROM "
-                + "    inventario i"
-                + "JOIN "
-                + "    producto p ON i.CodigoProducto = p.CodigoProducto;";
-        Connection conexion = Conexion.obtenerConexion();
-        PreparedStatement st = null;
+        String sql = "SELECT i.CodigoItemInventario, p.NombreProducto, i.CodigoProveedor, "
+                + "i.FechaEntrega, i.Stock, "
+                + "CASE WHEN i.Stock < 5 THEN 'Reabastecer' ELSE 'Suficiente Stock' END AS Estado "
+                + "FROM inventario i "
+                + "JOIN producto p ON i.CodigoProducto = p.CodigoProducto";
 
-        try {
-            st = conexion.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
-
+        try (
+                 Connection conexion = Conexion.obtenerConexion();  Statement stmt = conexion.createStatement();  ResultSet rs = stmt.executeQuery(sql);) {
+            // Process the result set
             while (rs.next()) {
-                Inventario pr = new Inventario();
-                pr.CodigoItem = rs.getInt("CodigoProducto");
-                pr.NombreProducto = rs.getString("NombreProducto");
-                pr.CodigoProveedor = rs.getString("CodigoProveedor");
-                pr.FechaEntrega = rs.getString("FechaEntrega");
-                pr.Stock = rs.getString("Stock");
-
-                p.add(pr);
+                Inventario i = new Inventario();
+                i.CodigoItem = rs.getInt("CodigoItemInventario");
+                i.NombreProducto = rs.getString("NombreProducto");
+                i.CodigoProveedor = rs.getInt("CodigoProveedor");
+                i.FechaEntrega = rs.getDate("FechaEntrega");
+                i.Stock = rs.getInt("Stock");
+                i.Estado = rs.getString("Estado");
+                
+                p.add(i);
             }
-
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error Inv: " + e);
+            e.printStackTrace();
         }
 
         return p;
@@ -115,14 +105,10 @@ public class Inventario {
 
         try (
                  Connection conexion = Conexion.obtenerConexion();  CallableStatement stmt = conexion.prepareCall(sql);) {
-            stmt.setObject(1, CodigoProducto);  // Set the CodigoProducto
+            stmt.setObject(1, CodigoProducto);
 
             ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                int rowsAffected = rs.getInt("RowsAffected");
-                System.out.println("Rows affected: " + rowsAffected);
-            }
+            JOptionPane.showMessageDialog(null, "Eliminación de producto exitosa");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error Inv: " + e);

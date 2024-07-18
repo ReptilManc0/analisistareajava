@@ -1,6 +1,6 @@
 package views;
 
-import Controllers.VentanaPrincipalController;
+import Controllers.*;
 import model.Clientes;
 import model.Productos;
 import model.Ventas;
@@ -25,13 +25,15 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
         Font font = new Font("Georgia", Font.ITALIC, 14);
         UIManager.put("OptionPane.messageFont", font);
-        MostrarProveedores();
-        MostrarClientes();
-        MostrarProductos();
-        MostrarVentas();
+        
 
     }
-
+    public void MostarInventario(){
+        DefaultTableModel t = new DefaultTableModel();
+        jTableInventario.setModel(t);
+        ControllerDisponibilidadProducto p = new ControllerDisponibilidadProducto();
+        jTableInventario.setModel(p.MostrarInventario());
+    }
     /*  private void CargarNombresProveedores() {
         Proveedores nombreProveedores = new Proveedores();
         // Obtener los nombres de los proveedores
@@ -79,79 +81,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
      */
     //Validacion de Correo
     //Validacion general
-    public void LimpiarClientes() {
-        JtextNombreCliente.setText("");
-        jTextDNICliente.setText("");
-        jtextApellidoCliente.setText("");
-        jTextCorreoCliente.setText("");
-        jTelefonoCliente.setText("");
-    }
 
-    public void LimpiarProveedor() {
-        jTextNombreProvee.setText("");
-        jTextRUCProve.setText("");
-        jTextTelfProvee.setText("");
-        jTextCorreoProvee.setText("");
-
-    }
-
-    public void LimpiarProductos() {
-        jTextIDProducto.setText("");
-        jTextNombreProducto.setText("");
-        jTextPrecioProducto.setText("");
-
-    }
-
-    public void LimpiarVenta() {
-        jTextIDVentas.setText("");
-        jTextFieldFechaVenta.setText("");
-
-        jTextMontoTotalVentas.setText("");
-    }
-
-    public void MostrarClientes() {
-        DefaultTableModel t = new DefaultTableModel();
-        jTableCliente.setModel(t);
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        jTableCliente.setModel(p.MostrarClientes());
-    }
-
-    public void MostrarProductos() {
-        DefaultTableModel t = new DefaultTableModel();
-        jTableProductos.setModel(t);
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        jTableProductos.setModel(p.MostrarProductos());
-
-    }
-
-    public void MostrarProveedores() {
-        DefaultTableModel t = new DefaultTableModel();
-        jTableProveedor.setModel(t);
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        jTableProveedor.setModel(p.MostrarProveedores());
-    }
-
-    public void MostrarVentas() {
-        jComboClienteVentas.removeAllItems();
-        DefaultTableModel t = new DefaultTableModel();
-        jTableVentas.setModel(t);
-        Clientes c = new Clientes();
-        ArrayList<String> l = c.ObtenerIDsClientes();
-        for (String s : l) {
-            jComboClienteVentas.addItem(s);
-        }
-
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        jTableVentas.setModel(p.MostrarVentas());
-    }
-       public void MostrarEmpleado() {
-       
-        DefaultTableModel t = new DefaultTableModel();
-        jTableEmpleado.setModel(t);
-
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        jTableEmpleado.setModel(p.MostrarEmpleado());
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -163,7 +93,6 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
         jButton37 = new javax.swing.JButton();
-        Pestañas = new javax.swing.JTabbedPane();
         Productos = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jTextNombreProducto = new javax.swing.JTextField();
@@ -172,7 +101,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTableProductos = new javax.swing.JTable();
+        jTableInventario = new javax.swing.JTable();
         jButton20 = new javax.swing.JButton();
         BotonActualizarProducto = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
@@ -260,14 +189,6 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 200, 780));
 
-        Pestañas.setBackground(new java.awt.Color(153, 153, 153));
-        Pestañas.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        Pestañas.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                PestañasStateChanged(evt);
-            }
-        });
-
         jLabel21.setText("ID");
 
         jTextNombreProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +225,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
             }
         });
 
-        jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
+        jTableInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -320,26 +241,26 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableProductosMouseClicked(evt);
+                jTableInventarioMouseClicked(evt);
             }
         });
-        jScrollPane5.setViewportView(jTableProductos);
-        if (jTableProductos.getColumnModel().getColumnCount() > 0) {
-            jTableProductos.getColumnModel().getColumn(0).setResizable(false);
-            jTableProductos.getColumnModel().getColumn(0).setPreferredWidth(30);
-            jTableProductos.getColumnModel().getColumn(1).setResizable(false);
-            jTableProductos.getColumnModel().getColumn(1).setPreferredWidth(100);
-            jTableProductos.getColumnModel().getColumn(2).setResizable(false);
-            jTableProductos.getColumnModel().getColumn(2).setPreferredWidth(30);
-            jTableProductos.getColumnModel().getColumn(2).setHeaderValue("Descripción");
-            jTableProductos.getColumnModel().getColumn(3).setResizable(false);
-            jTableProductos.getColumnModel().getColumn(3).setPreferredWidth(30);
-            jTableProductos.getColumnModel().getColumn(3).setHeaderValue("Categoría");
-            jTableProductos.getColumnModel().getColumn(4).setResizable(false);
-            jTableProductos.getColumnModel().getColumn(4).setPreferredWidth(30);
-            jTableProductos.getColumnModel().getColumn(4).setHeaderValue("Precio Unitario");
+        jScrollPane5.setViewportView(jTableInventario);
+        if (jTableInventario.getColumnModel().getColumnCount() > 0) {
+            jTableInventario.getColumnModel().getColumn(0).setResizable(false);
+            jTableInventario.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTableInventario.getColumnModel().getColumn(1).setResizable(false);
+            jTableInventario.getColumnModel().getColumn(1).setPreferredWidth(100);
+            jTableInventario.getColumnModel().getColumn(2).setResizable(false);
+            jTableInventario.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTableInventario.getColumnModel().getColumn(2).setHeaderValue("Descripción");
+            jTableInventario.getColumnModel().getColumn(3).setResizable(false);
+            jTableInventario.getColumnModel().getColumn(3).setPreferredWidth(30);
+            jTableInventario.getColumnModel().getColumn(3).setHeaderValue("Categoría");
+            jTableInventario.getColumnModel().getColumn(4).setResizable(false);
+            jTableInventario.getColumnModel().getColumn(4).setPreferredWidth(30);
+            jTableInventario.getColumnModel().getColumn(4).setHeaderValue("Precio Unitario");
         }
 
         jButton20.setBackground(new java.awt.Color(0, 51, 51));
@@ -410,7 +331,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton30))
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         ProductosLayout.setVerticalGroup(
             ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,12 +354,10 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
                     .addComponent(jButton20)
                     .addComponent(BotonActualizarProducto)
                     .addComponent(jButton30))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        Pestañas.addTab("Productos", Productos);
-
-        getContentPane().add(Pestañas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1060, 610));
+        getContentPane().add(Productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, 500));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Giraldos.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 60));
@@ -474,46 +393,28 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton37ActionPerformed
 
-    private void PestañasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PestañasStateChanged
-        MostrarProveedores();
-        MostrarClientes();
-        MostrarProductos();
-        MostrarVentas();
-    }//GEN-LAST:event_PestañasStateChanged
-
     private void jTextIDProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDProductoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextIDProductoActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        MostrarProductos();
+       
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void BotonActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActualizarProductoActionPerformed
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        p.UpdateProducto(jTextIDProducto.getText(), jTextNombreProducto.getText(), jTextPrecioProducto.getText());
-        MostrarProductos();
+       
     }//GEN-LAST:event_BotonActualizarProductoActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        p.deleteProducto(jTextIDProducto.getText());
-        MostrarProductos();
+   
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void jTableProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProductosMouseClicked
-        int filaSeleccionada = jTableProductos.rowAtPoint(evt.getPoint());
-
-        //evento para seleccionar una fila
-        jTextIDProducto.setText(jTableProductos.getValueAt(filaSeleccionada, 0).toString());
-        jTextNombreProducto.setText(jTableProductos.getValueAt(filaSeleccionada, 1).toString());
-        jTextPrecioProducto.setText(jTableProductos.getValueAt(filaSeleccionada, 2).toString());
-    }//GEN-LAST:event_jTableProductosMouseClicked
+    private void jTableInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableInventarioMouseClicked
+    
+    }//GEN-LAST:event_jTableInventarioMouseClicked
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        VentanaPrincipalController v = new VentanaPrincipalController();
-        v.AddProducto(jTextNombreProducto.getText(), jTextPrecioProducto.getText());
-        MostrarProductos();
+
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jTextPrecioProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextPrecioProductoKeyReleased
@@ -574,7 +475,6 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonActualizarProducto;
-    public javax.swing.JTabbedPane Pestañas;
     private javax.swing.JPanel Productos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
@@ -591,7 +491,7 @@ public class VerificarDisponibilidaddeProductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTableProductos;
+    private javax.swing.JTable jTableInventario;
     private javax.swing.JTextField jTextIDProducto;
     private javax.swing.JTextField jTextNombreProducto;
     private javax.swing.JTextField jTextPrecioProducto;

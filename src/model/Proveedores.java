@@ -99,4 +99,24 @@ public class Proveedores extends FuncionesGenerales {
         }
 
     }
+     public ArrayList<String> ObtenerIDsProveedores(){
+    ArrayList<String> l = new ArrayList<>();
+    String query = "SELECT CodigoProveedor FROM proveedor";
+        Connection conexion = Conexion.obtenerConexion();
+        PreparedStatement st = null;
+
+        try {
+            st = conexion.prepareStatement(query);
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                l.add(String.valueOf(rs.getInt("CodigoProveedor")));
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Errorprov: " + e);
+        }
+    
+    return l;
+    }
 }
