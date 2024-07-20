@@ -1,5 +1,6 @@
 package views;
 
+import Controllers.ControllerLogin;
 import java.awt.Font;
 
 import javax.swing.JOptionPane;
@@ -137,26 +138,8 @@ public class InicioDeSesion extends javax.swing.JFrame {
         String username=jTextUsuario.getText();
         String password=jPasswordField.getText();
         
-        try{
-        if (username.equalsIgnoreCase("admin")&&password.equals("admin123")) {            
-                 // Inicio de sesión exitoso
-                
-                UIManager.put("OptionPane.okButtonText", "Continuar");
-                JOptionPane.showMessageDialog(null, "Bienvenido/a admin al gestor del inventario de Giraldo's Girasol: Desayunos, Regalos y Detalles");
-                this.dispose();
-                Ventana_Principal menu = new Ventana_Principal();
-                menu.setVisible(true);
-
-            } else {
-            
-                // Credenciales inválidas
-                JOptionPane.showMessageDialog(null, "Credenciales Inválidas");
-            }
-        }catch(Exception e){
-            
-            JOptionPane.showMessageDialog(null, "Error en la validación: " + e.getMessage());
-            
-        }
+        Controllers.ControllerLogin c = new ControllerLogin();
+        c.login(this, username, password);
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
     private void jTextUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextUsuarioKeyReleased

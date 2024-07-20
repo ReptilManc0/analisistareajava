@@ -26,27 +26,24 @@ public class Inventario {
     public Object Stock;
     public Object CodigoProveedor;
     public Object FechaEntrega;
+    public Object FechaSalida;
     public Object Estado;
 
     public void AgregarProductoInventario() {
         Connection conexion = Conexion.obtenerConexion();
-        PreparedStatement stmt = null;
+        
         //Insercion de un nuevo proveedor en la BD
         //CALL AddNewProduct(NombreProducto, Precio, Stock, CodigoProveedor, FechaEntrega);
         try {
-            String consulta = "CALL AddNewProduct(?, ?, ?, ?, ?)";
+            String consulta = "CALL AddNewProduct('"+NombreProducto+"', "+Precio+", "+Stock+", "+CodigoProveedor+", '"+FechaEntrega+"', '"+FechaSalida+"')";
             // Preparar la consulta
-            stmt.setObject(1, NombreProducto);
-            stmt.setObject(2, Precio);
-            stmt.setObject(3, Stock);
-            stmt.setObject(4, CodigoProveedor);
-            stmt.setObject(5, FechaEntrega);
+            PreparedStatement stmt = conexion.prepareStatement(consulta);
 
-            // Ejecutar la consulta
-            stmt.executeQuery();
-            stmt.close();
+                stmt.executeQuery(consulta);
+            
             Conexion.cerrarConexion(conexion);
             JOptionPane.showMessageDialog(null, "Registro de producto exitoso");
+            
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error Inv: " + e);
         }
@@ -57,7 +54,7 @@ public class Inventario {
         ArrayList<Inventario> p = new ArrayList<>();
         String sql = "SELECT i.CodigoItemInventario, p.NombreProducto, i.CodigoProveedor, "
                 + "i.FechaEntrega, i.Stock, "
-                + "CASE WHEN i.Stock < 5 THEN 'Reabastecer' ELSE 'Suficiente Stock' END AS Estado "
+                + "CASE WHEN i.Stock < 5 THEN 'Reabastecer' ELSE 'Suficiente Stock' END AS Estado , i.FechaSalida "
                 + "FROM inventario i "
                 + "JOIN producto p ON i.CodigoProducto = p.CodigoProducto";
 
@@ -72,7 +69,7 @@ public class Inventario {
                 i.FechaEntrega = rs.getDate("FechaEntrega");
                 i.Stock = rs.getInt("Stock");
                 i.Estado = rs.getString("Estado");
-                
+                i.FechaSalida = rs.getString("FechaSalida");
                 p.add(i);
             }
         } catch (SQLException e) {
