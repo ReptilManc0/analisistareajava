@@ -25,7 +25,7 @@ public class ControllerLogin {
                  // Inicio de sesión exitoso
                 
                 UIManager.put("OptionPane.okButtonText", "Continuar");
-                JOptionPane.showMessageDialog(null, "Bienvenido/a admin al gestor del inventario de Giraldo's Girasol: Desayunos, Regalos y Detalles");
+                JOptionPane.showMessageDialog(null, "Bienvenido/a admin al gestor del inventario de La Tiendita de Lupita");
                 i.dispose();
                 MenuAdministrador menu = new MenuAdministrador();
                 menu.setVisible(true);
