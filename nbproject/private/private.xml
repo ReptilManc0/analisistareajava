@@ -3,19 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Projectos Ciclo 3 Tareas">
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Usuarios.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/InicioDeSesion.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Inventario.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/Ventana_Principal.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Conexion.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Proveedores.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/VerificarDisponibilidaddeProductos.java</file>
         </group>
         <group>
+<<<<<<< HEAD
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/views/Ventana_Principal.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/Controllers/VentanaPrincipalController.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/model/AdmPedido.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/Controllers/AdmPedidoController.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/model/Ventas.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/views/AdmPedido.java</file>
+=======
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Inventario.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/Controllers/ControllerDisponibilidadProducto.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/Controllers/VentanaPrincipalController.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/Ventana_Principal.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/VerDetallesCombo.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Proveedores.java</file>
+            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/VerificarDisponibilidaddeProductos.java</file>
+>>>>>>> c543dc626cb31c9165a6b9dead608ba0578bbeeb
         </group>
     </open-files>
 </project-private>
