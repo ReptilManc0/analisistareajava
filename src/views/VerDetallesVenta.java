@@ -2,7 +2,7 @@ package views;
 
 import model.Conexion;
 import model.ConsumiblesEnCombo;
-import model.DetallesVentasProductos;
+import model.DetallesVentas;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +22,7 @@ public class VerDetallesVenta extends javax.swing.JFrame {
         setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
     private void CargarProductosVenta() {
-        DetallesVentasProductos Prod = new DetallesVentasProductos();
+        DetallesVentas Prod = new DetallesVentas();
         DefaultTableModel  tabla = new DefaultTableModel();
         tabla.setColumnIdentifiers(new Object[] {"Producto(s) vendido(s)"});
         // Obtiene la conexión a la base de datos

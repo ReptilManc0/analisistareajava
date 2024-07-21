@@ -10,12 +10,12 @@ import Controllers.ControlarPedidoProveedor;
  *
  * @author JAHIR
  */
-public class IframePedidoProveedor extends javax.swing.JFrame {
+public class PedidoProveedorview extends javax.swing.JFrame {
 
     /**
      * Creates new form PedidoProveedor
      */
-    public IframePedidoProveedor() {
+    public PedidoProveedorview() {
         initComponents();
     }
 
@@ -158,7 +158,6 @@ public class IframePedidoProveedor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -236,7 +235,7 @@ public class IframePedidoProveedor extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       IframePedidoProveedor v = new IframePedidoProveedor();
+       PedidoProveedorview v = new PedidoProveedorview();
        ControlarPedidoProveedor c = new ControlarPedidoProveedor(v);
        v.setVisible(true);
     }

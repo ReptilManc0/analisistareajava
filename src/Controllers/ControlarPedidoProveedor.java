@@ -11,7 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.PedidoProveedorCRUD;
 import model.PedidoProveedor;
-import views.IframePedidoProveedor;
+import views.PedidoProveedorview;
 
 /**
  *
@@ -22,10 +22,10 @@ public class ControlarPedidoProveedor implements ActionListener{
     
     PedidoProveedorCRUD dao = new PedidoProveedorCRUD();
     PedidoProveedor p = new PedidoProveedor();
-    IframePedidoProveedor vista = new IframePedidoProveedor();
+    PedidoProveedorview vista = new PedidoProveedorview();
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public ControlarPedidoProveedor(IframePedidoProveedor v) {
+    public ControlarPedidoProveedor(PedidoProveedorview v) {
         this.vista= v;
         this.vista.BtnListar.addActionListener(this);
         this.vista.BtnEnviar.addActionListener(this);
