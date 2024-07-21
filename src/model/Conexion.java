@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class Conexion {
     // Datos de conexión a la base de datos
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/db_lupita";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3307/db_lupita";
     private static final String USUARIO = "root";
     private static final String CONTRASENA = "";
     // Método para obtener la conexión a la base de datos

@@ -18,10 +18,10 @@ public class ControllerDisponibilidadProducto {
         DefaultTableModel tabla = new DefaultTableModel();
         Inventario inv = new Inventario();
         ArrayList<Inventario> invList = inv.ReadInv();
-        tabla.setColumnIdentifiers(new Object[]{"Codigo Item", "Nombre del Producto", "Codigo del Proveedor", "Fecha de Entrega", "Stock", "Estado"});
+        tabla.setColumnIdentifiers(new Object[]{"Codigo Item", "Nombre del Producto", "Codigo del Proveedor", "Fecha de Entrega", "Fecha de Salida", "Stock", "Estado"});
         try {
             for (Inventario i : invList) {
-                tabla.addRow(new Object[]{(i.CodigoItem), (i.NombreProducto), (i.CodigoProveedor), (i.FechaEntrega), (i.Stock), (i.Estado)});
+                tabla.addRow(new Object[]{(i.CodigoItem), (i.NombreProducto), (i.CodigoProveedor), (i.FechaEntrega), (i.FechaSalida), (i.Stock), (i.Estado)});
             }
 
         } catch (Exception e) {
@@ -29,4 +29,21 @@ public class ControllerDisponibilidadProducto {
         }
         return tabla;
     }
+        public void EliminarInventarioyProducto(String id){
+        Inventario inv = new Inventario();
+        inv.CodigoProducto=id;
+        inv.EliminarProducto();
+        }
+        
+        public void addProducto(String nombreproducto, String precio, String stock, String codigoproveedor, String fechaentrega, String fechasalida){
+            Inventario inv = new Inventario();
+            inv.NombreProducto= nombreproducto;
+            inv.Precio=precio;
+            inv.Stock=stock;
+            inv.CodigoProveedor=codigoproveedor;
+            inv.FechaEntrega=fechaentrega;
+            inv.FechaSalida=fechasalida;
+            inv.AgregarProductoInventario();
+            
+        }
 }
