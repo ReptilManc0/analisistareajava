@@ -34,7 +34,6 @@ public class InicioDeSesion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 255));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -50,6 +49,11 @@ public class InicioDeSesion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Contraseña");
 
+        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldActionPerformed(evt);
+            }
+        });
         jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jPasswordFieldKeyReleased(evt);
@@ -116,12 +120,36 @@ public class InicioDeSesion extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 400, 330));
         setLocationRelativeTo(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sin título-1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
+        String username=jTextUsuario.getText();
+        String password=jPasswordField.getText();
+
+        Controllers.ControllerLogin c = new ControllerLogin();
+        c.login(this, username, password);
+    }//GEN-LAST:event_jButtonIngresarActionPerformed
+
+    private void jPasswordFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldKeyTyped
+
+    private void jPasswordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyReleased
+        Validar();
+    }//GEN-LAST:event_jPasswordFieldKeyReleased
+
+    private void jTextUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextUsuarioKeyReleased
+        Validar();
+    }//GEN-LAST:event_jTextUsuarioKeyReleased
+
+    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldActionPerformed
     
    
     public void Validar(){
@@ -134,26 +162,6 @@ public class InicioDeSesion extends javax.swing.JFrame {
         }
     }
     
-    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
-        String username=jTextUsuario.getText();
-        String password=jPasswordField.getText();
-        
-        Controllers.ControllerLogin c = new ControllerLogin();
-        c.login(this, username, password);
-    }//GEN-LAST:event_jButtonIngresarActionPerformed
-
-    private void jTextUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextUsuarioKeyReleased
-        Validar();
-    }//GEN-LAST:event_jTextUsuarioKeyReleased
-
-    private void jPasswordFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldKeyTyped
-
-    private void jPasswordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyReleased
-        Validar();
-    }//GEN-LAST:event_jPasswordFieldKeyReleased
-
     /**
      * @param args the command line arguments
      */

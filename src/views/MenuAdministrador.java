@@ -83,6 +83,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jTableProveedor.setModel(t);
         VentanaPrincipalController p = new VentanaPrincipalController();
         jTableProveedor.setModel(p.MostrarProveedores());
+          
     }
 
     public void MostrarVentas() {
@@ -111,6 +112,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -130,7 +132,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jTextCorreoProvee = new javax.swing.JTextField();
         jButtonEliminarProveedor = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
         jTextRUCProve = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         Productos = new javax.swing.JPanel();
@@ -209,19 +210,26 @@ public class MenuAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 255));
+        jLabel10.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("PANEL DE ADMINISTRADOR");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, 40));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton1.setText("Proveedores");
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setLabel("Verificar Productos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(204, 0, 204));
+        jButton7.setBackground(new java.awt.Color(204, 204, 255));
         jButton7.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setText("Cerrar sesión");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,8 +237,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton24.setBackground(new java.awt.Color(204, 0, 204));
+        jButton24.setBackground(new java.awt.Color(204, 204, 255));
         jButton24.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jButton24.setForeground(new java.awt.Color(0, 0, 0));
         jButton24.setText("Productos");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,8 +247,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(204, 0, 204));
+        jButton25.setBackground(new java.awt.Color(204, 204, 255));
         jButton25.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jButton25.setForeground(new java.awt.Color(0, 0, 0));
         jButton25.setText("Clientes");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,8 +257,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton37.setBackground(new java.awt.Color(204, 0, 204));
+        jButton37.setBackground(new java.awt.Color(204, 204, 255));
         jButton37.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jButton37.setForeground(new java.awt.Color(0, 0, 0));
         jButton37.setText("Ventas");
         jButton37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +290,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109))
         );
@@ -384,16 +395,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setBackground(new java.awt.Color(0, 51, 51));
-        jButton19.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(255, 255, 255));
-        jButton19.setText("Mostrar todo");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
-            }
-        });
-
         jTextRUCProve.setEnabled(false);
         jTextRUCProve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,7 +423,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
             ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProveedoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(ProveedoresLayout.createSequentialGroup()
                         .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,10 +446,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonEliminarProveedor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton19)))
-                .addGap(0, 29, Short.MAX_VALUE))
+                        .addComponent(jButtonEliminarProveedor)))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         ProveedoresLayout.setVerticalGroup(
             ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,8 +472,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAgregarProveedor)
                     .addComponent(jButton2)
-                    .addComponent(jButtonEliminarProveedor)
-                    .addComponent(jButton19))
+                    .addComponent(jButtonEliminarProveedor))
                 .addGap(37, 37, 37))
         );
 
@@ -612,17 +610,16 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23)))
-                    .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosLayout.createSequentialGroup()
-                            .addComponent(jButton11)
-                            .addGap(12, 12, 12)
-                            .addComponent(BotonActualizarProducto)
-                            .addGap(12, 12, 12)
-                            .addComponent(jButton20)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton30))
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addGroup(ProductosLayout.createSequentialGroup()
+                        .addComponent(jButton11)
+                        .addGap(12, 12, 12)
+                        .addComponent(BotonActualizarProducto)
+                        .addGap(12, 12, 12)
+                        .addComponent(jButton20)
+                        .addGap(741, 741, 741)
+                        .addComponent(jButton30))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ProductosLayout.setVerticalGroup(
             ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,7 +642,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                     .addComponent(jButton20)
                     .addComponent(BotonActualizarProducto)
                     .addComponent(jButton30))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         Pestañas.addTab("Productos", Productos);
@@ -1301,14 +1298,12 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         getContentPane().add(Pestañas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1060, 610));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Giraldos.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 60));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupitalogo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 90, 150));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sin título-1.png"))); // NOI18N
         jLabel8.setText("jLabel8");
-        jLabel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1080, 210));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1320,7 +1315,10 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        VerificarDisponibilidaddeProductos v = new VerificarDisponibilidaddeProductos();
+        v.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
@@ -1583,10 +1581,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextRUCProveActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        MostrarProveedores();
-    }//GEN-LAST:event_jButton19ActionPerformed
-
     private void jButtonEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarProveedorActionPerformed
         VentanaPrincipalController p = new VentanaPrincipalController();
         p.deleteProveedor(jTextRUCProve.getText());
@@ -1762,7 +1756,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton24;
@@ -1783,6 +1776,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVerEntrega1;
     private javax.swing.JComboBox<String> jComboClienteVentas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
