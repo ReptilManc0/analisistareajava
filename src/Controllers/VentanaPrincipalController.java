@@ -7,6 +7,7 @@ package Controllers;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.Clientes;
+import model.DetallesVentas;
 import model.Empleados;
 import model.Productos;
 import model.Proveedores;
@@ -236,5 +237,22 @@ public class VentanaPrincipalController {
         Empleados p = new Empleados();
         p.CodigoEmpleado = id;
         p.EliminarEmpleados();
+    }
+    public DefaultTableModel MostrarDetalleVenta(String id){
+     DefaultTableModel tabla = new DefaultTableModel();
+
+        DetallesVentas dv = new DetallesVentas();
+        dv.CodigoVenta=id;
+        ArrayList<DetallesVentas> dvlist = dv.ObtenerDetallesVenta();
+        tabla.setColumnIdentifiers(new Object[]{"Codigo de Detalle de Venta", "Codigo de Venta", "Nombre del Producto", "Cantidad", "ImporteParcial"});
+        try {
+            for (DetallesVentas d : dvlist) {
+                tabla.addRow(new Object[]{(d.CodigoDetalleVenta), (d.CodigoVenta), (d.NombreProducto), (d.Cantidad),(d.ImporteParcial)});
+            }
+
+        } catch (Exception e) {
+            System.out.println("error " + e);
+        }
+        return tabla;
     }
 }
