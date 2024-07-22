@@ -11,6 +11,12 @@
         </group>
         <group>
 <<<<<<< HEAD
+            <file>file:/D:/AnalisisProyecto/analisistareajava/src/Controllers/AdmPedidoController.java</file>
+            <file>file:/D:/AnalisisProyecto/analisistareajava/src/views/DetallePedido.java</file>
+            <file>file:/D:/AnalisisProyecto/analisistareajava/src/model/PedidoModel.java</file>
+            <file>file:/D:/AnalisisProyecto/analisistareajava/src/views/AdmPedido.java</file>
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/IframePedidoProveedor.java</file>
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/model/PedidoProveedorCRUD.java</file>
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/Controllers/ControlarPedidoProveedor.java</file>
@@ -35,6 +41,7 @@
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Proveedores.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/VerificarDisponibilidaddeProductos.java</file>
 >>>>>>> 0a198aeeebfce3a4a71216ba3cf8602337e9588f
+>>>>>>> 4626ecc19fb2ce5e278a93d9aa1fcfd01eb82164
         </group>
     </open-files>
 </project-private>
