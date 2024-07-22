@@ -16,16 +16,15 @@ import javax.swing.JOptionPane;
 
 
 public class PedidoProveedorCRUD {
-    Connection  conexion = Conexion.obtenerConexion();
-    Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    
+    Connection  conexion = Conexion.obtenerConexion();
     public List listar() {
         List<PedidoProveedor> datos = new ArrayList<>();
         String sql ="Select * from pedidoproveedor";
         try {
-            ps = con.prepareStatement(sql);
+            Connection  conexion = Conexion.obtenerConexion();
+            ps = conexion.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 PedidoProveedor p = new PedidoProveedor();
@@ -45,7 +44,8 @@ public class PedidoProveedorCRUD {
     public int Agregar(PedidoProveedor p){
         String sql ="Insert into pedidoproveedor(Proveedor,FechaPedido,Producto,Direccion,EstadoPedido) values (?,?,?,?,? )";
         try {
-            ps = con.prepareStatement(sql);
+            Connection  conexion = Conexion.obtenerConexion();
+            ps = conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -61,7 +61,8 @@ public class PedidoProveedorCRUD {
         int r = 0;
         String sql ="update pedidoproveedor set Proveedor=?, FechaPedido=?, Producto=?, Direccion=?, EstadoPedido=? where id=?";
         try {
-            ps= con.prepareStatement(sql);
+            Connection  conexion = Conexion.obtenerConexion();
+            ps= conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -83,7 +84,8 @@ public class PedidoProveedorCRUD {
     public void delete (int id){
         String sql = "delete from pedidoproveedor where id="+ id;
         try {
-            ps= con.prepareStatement(sql);
+            Connection  conexion = Conexion.obtenerConexion();
+            ps= conexion.prepareStatement(sql);
             ps.executeUpdate();
             
         } catch (Exception e) {
@@ -93,7 +95,6 @@ public class PedidoProveedorCRUD {
     public ArrayList<String> ObtenerNombresProveedores() {
     ArrayList<String> l = new ArrayList<>();
     String query = "SELECT NombreProveedor FROM proveedor";
-    Connection conexion = Conexion.obtenerConexion();
     PreparedStatement st = null;
 
     try {

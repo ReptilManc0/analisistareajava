@@ -25,7 +25,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
-        setTitle("Gestor de inventario");
+        setTitle("Menú Principal");
 
         Font font = new Font("Georgia", Font.ITALIC, 14);
         UIManager.put("OptionPane.messageFont", font);
@@ -217,7 +217,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("PANEL DE ADMINISTRADOR");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, -1, 40));
 
@@ -225,7 +224,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setLabel("Verificar Productos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +233,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jButton7.setBackground(new java.awt.Color(204, 204, 255));
         jButton7.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setText("Cerrar sesión");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,8 +242,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jButton24.setBackground(new java.awt.Color(204, 204, 255));
         jButton24.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(0, 0, 0));
-        jButton24.setText("Productos");
+        jButton24.setText("Pedido al Proveedor");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton24ActionPerformed(evt);
@@ -255,8 +251,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jButton25.setBackground(new java.awt.Color(204, 204, 255));
         jButton25.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(0, 0, 0));
-        jButton25.setText("Clientes");
+        jButton25.setText("Administrar Pedido");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton25ActionPerformed(evt);
@@ -265,8 +260,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jButton37.setBackground(new java.awt.Color(204, 204, 255));
         jButton37.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
-        jButton37.setForeground(new java.awt.Color(0, 0, 0));
-        jButton37.setText("Ventas");
+        jButton37.setText("Registrar Salida de Producto");
         jButton37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton37ActionPerformed(evt);
@@ -296,7 +290,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109))
         );
@@ -453,7 +447,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonEliminarProveedor)))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 31, Short.MAX_VALUE))
         );
         ProveedoresLayout.setVerticalGroup(
             ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,7 +607,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jButton20))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         ProductosLayout.setVerticalGroup(
             ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -635,7 +629,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                     .addComponent(jButton11)
                     .addComponent(jButton20)
                     .addComponent(BotonActualizarProducto))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         Pestañas.addTab("Productos", Productos);
@@ -802,14 +796,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20)
                             .addComponent(jTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ClientesLayout.createSequentialGroup()
-                            .addComponent(jButton8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(BotonActualizarCliente)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton14))
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ClientesLayout.createSequentialGroup()
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BotonActualizarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton14))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67))
         );
         ClientesLayout.setVerticalGroup(
@@ -987,14 +980,14 @@ public class MenuAdministrador extends javax.swing.JFrame {
                                 .addGap(582, 582, 582)
                                 .addComponent(jButtonVerDetallesVentas))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 20, Short.MAX_VALUE))))
+                        .addGap(0, 31, Short.MAX_VALUE))))
         );
         VentasLayout.setVerticalGroup(
             VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(VentasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                         .addComponent(jLabel74)
@@ -1018,7 +1011,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                     .addComponent(jButton13)
                     .addComponent(BotonActualizarVentas)
                     .addComponent(jButtonVerDetallesVentas))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         Pestañas.addTab("Ventas", Ventas);
@@ -1166,7 +1159,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                                 .addComponent(jButton15)
                                 .addGap(125, 125, 125))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 20, Short.MAX_VALUE))))
+                        .addGap(0, 31, Short.MAX_VALUE))))
         );
         Ventas1Layout.setVerticalGroup(
             Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1182,7 +1175,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Ventas1Layout.createSequentialGroup()
                                 .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)))
                         .addGroup(Ventas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextIDEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1243,15 +1236,21 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
+        PedidoProveedorview v = new PedidoProveedorview();
+        v.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
+        AdmPedido v = new AdmPedido();
+        v.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-
+        RegistroSalidaProducto v = new RegistroSalidaProducto();
+        v.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void PestañasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PestañasStateChanged
