@@ -61,7 +61,7 @@ public class ControlarPedidoProveedor implements ActionListener{
                 String direccion=(String)vista.tabla.getValueAt(fila, 4);
                 String estado=(String)vista.tabla.getValueAt(fila, 5);
                 vista.txtID.setText(""+ id);
-                vista.CbProveedor.setSelectedItem(prove);
+                vista.txtProveedor.setText(prove);
                 vista.txtFecha.setText(fecha);
                 vista.txtProducto.setText(producto);
                 vista.txtDireccion.setText(direccion);
@@ -111,7 +111,7 @@ public class ControlarPedidoProveedor implements ActionListener{
     
     public void Agregar() {
         int id = Integer.parseInt(vista.txtID.getText());
-        String prove = (String) vista.CbProveedor.getSelectedItem();
+        String prove = (String) vista.txtProveedor.getText();
         String fecha = vista.txtFecha.getText();
         String producto = vista.txtProducto.getText();
         String direccion = vista.txtDireccion.getText();
@@ -132,7 +132,7 @@ public class ControlarPedidoProveedor implements ActionListener{
     
     public void Actualizar (){
         int id = Integer.parseInt(vista.txtID.getText());
-        String prove = (String) vista.CbProveedor.getSelectedItem();
+        String prove = (String) vista.txtProveedor.getText();
         String fecha = vista.txtFecha.getText();
         String producto = vista.txtProducto.getText();
         String direccion = vista.txtDireccion.getText();
