@@ -4,36 +4,40 @@
  */
 package views;
 
-import Controllers.VentanaPrincipalController;
+import controllers.AdmPedidoController;
 import java.awt.Font;
 import java.awt.Image;
-import java.util.ArrayList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-import model.Clientes;
+import java.util.*;
 
 /**
  *
  * @author diego
  */
 public class AdmPedido extends javax.swing.JFrame {
-    
-    
+
+    private AdmPedidoController controlador;
+
     public AdmPedido() {
         initComponents();
-        
+
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("Administrar Pedidos");
         ajustarImagen(bannerLupita, "src/Imagenes/banner_lupita.png");
         Font font = new Font("Georgia", Font.ITALIC, 14);
         UIManager.put("OptionPane.messageFont", font);
-        
-        MostrarVentas();
+
+        controlador = new AdmPedidoController(this);
+        configurarTabla();
+        controlador.cargarDetallesPedidos();
     }
-    
-    private void ajustarImagen(JLabel labelName, String root){
+
+    private void ajustarImagen(JLabel labelName, String root) {
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(
                 image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT)
@@ -41,29 +45,57 @@ public class AdmPedido extends javax.swing.JFrame {
         labelName.setIcon(icon);
         this.repaint();
     }
-    
-    public void MostrarVentas() {
-        DefaultTableModel t = new DefaultTableModel();
-        tableVentaAdmPedido.setModel(t);
-        Clientes c = new Clientes();
-        ArrayList<String> l = c.ObtenerIDsClientes();
 
-        VentanaPrincipalController p = new VentanaPrincipalController();
-        tableVentaAdmPedido.setModel(p.MostrarVentas());
+    private void configurarTabla() {
+        DefaultTableModel modelo = new DefaultTableModel(
+                new Object[][]{},
+                new String[]{"Código Venta", "Nombre Cliente", "Fecha Venta", "Importe Final"}
+        ) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // Hace que todas las celdas no sean editables
+            }
+        };
+        tableVentaAdmPedido.setModel(modelo);
+
+        tableVentaAdmPedido.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    int fila = tableVentaAdmPedido.getSelectedRow();
+                    if (fila != -1) {
+                        int codigoVenta = (int) tableVentaAdmPedido.getValueAt(fila, 0);
+                        abrirVentanaDetallePedido(codigoVenta);
+                    }
+                }
+            }
+        });
     }
-    
-    /*public void actualizarTablaVentas(Object[][] ventas) {
-        DefaultTableModel model = (DefaultTableModel) tableVentaAdmPedido.getModel();
-        model.setRowCount(0); // Limpiar la tabla
-        for (Object[] venta : ventas) {
-            model.addRow(venta);
+
+    public void mostrarDetallesPedidos(List<Map<String, Object>> detalles) {
+        DefaultTableModel modelo = (DefaultTableModel) tableVentaAdmPedido.getModel();
+        modelo.setRowCount(0);
+
+        for (Map<String, Object> listaAdmPedidoVenta : detalles) {
+            modelo.addRow(new Object[]{
+                listaAdmPedidoVenta.get("CodigoVenta"),
+                listaAdmPedidoVenta.get("NombreCliente"),
+                listaAdmPedidoVenta.get("FechaVenta"),
+                listaAdmPedidoVenta.get("ImporteFinal")
+            });
         }
     }
-    
-    public JTable getTableVentaAdmPedido() {
-        return tableVentaAdmPedido;
-    }*/
-    
+
+    private void abrirVentanaDetallePedido(int codigoVenta) {
+        if (controlador == null) {
+        System.out.println("El controlador es null en AdmPedido");
+        return;
+    }
+        SwingUtilities.invokeLater(() -> {
+        DetallePedido detallePedido = new DetallePedido(controlador, codigoVenta);
+        detallePedido.setVisible(true);
+    });
+}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
