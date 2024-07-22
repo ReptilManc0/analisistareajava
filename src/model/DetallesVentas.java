@@ -53,7 +53,7 @@ public class DetallesVentas extends FuncionesGenerales {
             }
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error prov: " + e);
+            JOptionPane.showMessageDialog(null, "Error detventa: " + e);
         }
 
         return p;

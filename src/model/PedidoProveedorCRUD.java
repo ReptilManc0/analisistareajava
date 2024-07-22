@@ -16,23 +16,22 @@ import javax.swing.JOptionPane;
 
 
 public class PedidoProveedorCRUD {
-<<<<<<< HEAD
-=======
+
     Connection  conexion = Conexion.obtenerConexion();
     
->>>>>>> 8932277c840742385299f36a025b56548c56be35
+
     PreparedStatement ps;
     ResultSet rs;
-    Connection  conexion = Conexion.obtenerConexion();
+    
     public List listar() {
         List<PedidoProveedor> datos = new ArrayList<>();
         String sql ="Select * from pedidoproveedor";
         try {
-<<<<<<< HEAD
+
             Connection  conexion = Conexion.obtenerConexion();
-=======
+
             
->>>>>>> 8932277c840742385299f36a025b56548c56be35
+
             ps = conexion.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -53,10 +52,8 @@ public class PedidoProveedorCRUD {
     public int Agregar(PedidoProveedor p){
         String sql ="Insert into pedidoproveedor(Proveedor,FechaPedido,Producto,Direccion,EstadoPedido) values (?,?,?,?,? )";
         try {
-<<<<<<< HEAD
+
             Connection  conexion = Conexion.obtenerConexion();
-=======
->>>>>>> 8932277c840742385299f36a025b56548c56be35
             ps = conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
@@ -71,15 +68,13 @@ public class PedidoProveedorCRUD {
     
     public int Actualizar(PedidoProveedor p){
         int r = 0;
-        Connection conexion = Conexion.obtenerConexion();
+        
         String sql ="update pedidoproveedor set Proveedor=?, FechaPedido=?, Producto=?, Direccion=?, EstadoPedido=? where id=?";
         try {
-<<<<<<< HEAD
+
             Connection  conexion = Conexion.obtenerConexion();
             ps= conexion.prepareStatement(sql);
-=======
-            ps = conexion.prepareStatement(sql);
->>>>>>> 8932277c840742385299f36a025b56548c56be35
+
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -99,13 +94,12 @@ public class PedidoProveedorCRUD {
     
     
     public void delete (int id){
-        Connection conexion = Conexion.obtenerConexion();
+        
         String sql = "delete from pedidoproveedor where id="+ id;
         try {
-<<<<<<< HEAD
+
             Connection  conexion = Conexion.obtenerConexion();
-=======
->>>>>>> 8932277c840742385299f36a025b56548c56be35
+
             ps= conexion.prepareStatement(sql);
             ps.executeUpdate();
             

@@ -87,7 +87,7 @@ public class Ventas extends FuncionesGenerales{
 
     public void EliminarVenta() {
         Connection conexion = Conexion.obtenerConexion();
-        String query = "DELETE FROM ventas WHERE CodigoVenta=?";
+        String query = "DELETE FROM ventas WHERE CodigoVenta= ?";
         try {
             PreparedStatement st = conexion.prepareStatement(query);
             st.setObject(1, CodigoVenta);
