@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 
 public class PedidoProveedorCRUD {
     Connection  conexion = Conexion.obtenerConexion();
-    Connection con;
+    
     PreparedStatement ps;
     ResultSet rs;
     
@@ -25,7 +25,8 @@ public class PedidoProveedorCRUD {
         List<PedidoProveedor> datos = new ArrayList<>();
         String sql ="Select * from pedidoproveedor";
         try {
-            ps = con.prepareStatement(sql);
+            
+            ps = conexion.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 PedidoProveedor p = new PedidoProveedor();
@@ -45,7 +46,7 @@ public class PedidoProveedorCRUD {
     public int Agregar(PedidoProveedor p){
         String sql ="Insert into pedidoproveedor(Proveedor,FechaPedido,Producto,Direccion,EstadoPedido) values (?,?,?,?,? )";
         try {
-            ps = con.prepareStatement(sql);
+            ps = conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -59,9 +60,10 @@ public class PedidoProveedorCRUD {
     
     public int Actualizar(PedidoProveedor p){
         int r = 0;
+        Connection conexion = Conexion.obtenerConexion();
         String sql ="update pedidoproveedor set Proveedor=?, FechaPedido=?, Producto=?, Direccion=?, EstadoPedido=? where id=?";
         try {
-            ps= con.prepareStatement(sql);
+            ps = conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -81,9 +83,10 @@ public class PedidoProveedorCRUD {
     
     
     public void delete (int id){
+        Connection conexion = Conexion.obtenerConexion();
         String sql = "delete from pedidoproveedor where id="+ id;
         try {
-            ps= con.prepareStatement(sql);
+            ps= conexion.prepareStatement(sql);
             ps.executeUpdate();
             
         } catch (Exception e) {

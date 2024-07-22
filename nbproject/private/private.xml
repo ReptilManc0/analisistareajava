@@ -2,14 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Projectos Ciclo 3 Tareas">
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Usuarios.java</file>
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/InicioDeSesion.java</file>
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/Ventana_Principal.java</file>
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Conexion.java</file>
-            <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Proveedores.java</file>
-        </group>
         <group>
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/Controllers/AdmPedidoController.java</file>
             <file>file:/D:/AnalisisProyecto/analisistareajava/src/views/DetallePedido.java</file>
@@ -18,9 +13,17 @@
 =======
 <<<<<<< HEAD
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/IframePedidoProveedor.java</file>
+>>>>>>> 35acd33fc9b4109a15c19179ebda86bd97f11d6b
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/model/PedidoProveedorCRUD.java</file>
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/Controllers/ControlarPedidoProveedor.java</file>
+            <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/MenuAdministrador.java</file>
+            <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/VerDetallesVenta.java</file>
+            <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/DetallesVentaView.java</file>
             <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/model/Proveedores.java</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/AdmPedido.java</file>
+            <file>file:/C:/Users/JAHIR/Desktop/Analisi/analisistareajava/src/views/PedidoProveedorview.java</file>
+=======
 =======
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/model/Empleados.java</file>
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/Controllers/ControlarPedidoProveedor.java</file>
@@ -42,6 +45,7 @@
             <file>file:/C:/Users/César/Desktop/Nueva%20carpeta%20(4)/ProyectoAnálisis/src/views/VerificarDisponibilidaddeProductos.java</file>
 >>>>>>> 0a198aeeebfce3a4a71216ba3cf8602337e9588f
 >>>>>>> 4626ecc19fb2ce5e278a93d9aa1fcfd01eb82164
+>>>>>>> 35acd33fc9b4109a15c19179ebda86bd97f11d6b
         </group>
     </open-files>
 </project-private>
