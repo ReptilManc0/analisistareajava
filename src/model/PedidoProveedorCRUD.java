@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 
@@ -16,6 +13,13 @@ import javax.swing.JOptionPane;
 
 
 public class PedidoProveedorCRUD {
+<<<<<<< HEAD
+=======
+
+    
+    
+
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
     PreparedStatement ps;
     ResultSet rs;
     Connection  conexion = Conexion.obtenerConexion();
@@ -24,7 +28,15 @@ public class PedidoProveedorCRUD {
         List<PedidoProveedor> datos = new ArrayList<>();
         String sql ="Select * from pedidoproveedor";
         try {
+<<<<<<< HEAD
             Connection  conexion = Conexion.obtenerConexion();
+=======
+
+            Connection  conexion = Conexion.obtenerConexion();
+
+            
+
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
             ps = conexion.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -47,6 +59,10 @@ public class PedidoProveedorCRUD {
     public int Agregar(PedidoProveedor p){
         String sql ="Insert into pedidoproveedor(Proveedor,FechaPedido,Producto,Direccion,EstadoPedido) values (?,?,?,?,? )";
         try {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
             Connection  conexion = Conexion.obtenerConexion();
             ps = conexion.prepareStatement(sql);
             ps.setString(1, p.getProveedor());
@@ -64,10 +80,20 @@ public class PedidoProveedorCRUD {
     
     public int Actualizar(PedidoProveedor p){
         int r = 0;
+<<<<<<< HEAD
         String sql ="update pedidoproveedor set Proveedor=?, FechaPedido=?, Producto=?, Direccion=?, EstadoPedido=? where id=?";
         try {
             Connection  conexion = Conexion.obtenerConexion();
             ps= conexion.prepareStatement(sql);
+=======
+        
+        String sql ="update pedidoproveedor set Proveedor=?, FechaPedido=?, Producto=?, Direccion=?, EstadoPedido=? where id=?";
+        try {
+
+            Connection  conexion = Conexion.obtenerConexion();
+            ps= conexion.prepareStatement(sql);
+
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
             ps.setString(1, p.getProveedor());
             ps.setString(2, p.getFecha());
             ps.setString(3, p.getProducto());
@@ -89,9 +115,18 @@ public class PedidoProveedorCRUD {
     
     
     public void delete (int id){
+<<<<<<< HEAD
         String sql = "delete from pedidoproveedor where id="+ id;
         try {
             Connection  conexion = Conexion.obtenerConexion();
+=======
+        
+        String sql = "delete from pedidoproveedor where id="+ id;
+        try {
+
+            Connection  conexion = Conexion.obtenerConexion();
+
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
             ps= conexion.prepareStatement(sql);
             ps.executeUpdate();
             

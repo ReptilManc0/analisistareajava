@@ -33,13 +33,13 @@ public class DetallesVentas extends FuncionesGenerales {
                 + " JOIN "
                 + "    producto p ON dv.CodigoProducto = p.CodigoProducto "
                 + " WHERE "
-                + "    dv.CodigoVenta = ?;";
+                + "    dv.CodigoVenta = "+CodigoVenta+";";
         Connection conexion = Conexion.obtenerConexion();
         PreparedStatement st = null;
 
         try {
             st = conexion.prepareStatement(query);
-            st.setObject(1, CodigoVenta);
+            
             ResultSet rs = st.executeQuery(query);
 
             while (rs.next()) {
@@ -53,7 +53,7 @@ public class DetallesVentas extends FuncionesGenerales {
             }
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error prov: " + e);
+            JOptionPane.showMessageDialog(null, "Error detventa: " + e);
         }
 
         return p;

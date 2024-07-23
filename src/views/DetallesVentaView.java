@@ -111,7 +111,7 @@ public class DetallesVentaView extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("VERIFICAR DISPONIBILIDAD DE PRODUCTOS");
+        jLabel10.setText("DETALLES DE VENTA");
 
         javax.swing.GroupLayout ProductosLayout = new javax.swing.GroupLayout(Productos);
         Productos.setLayout(ProductosLayout);
@@ -123,7 +123,7 @@ public class DetallesVentaView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ProductosLayout.createSequentialGroup()
-                        .addGap(182, 182, 182)
+                        .addGap(331, 331, 331)
                         .addComponent(jLabel10)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );

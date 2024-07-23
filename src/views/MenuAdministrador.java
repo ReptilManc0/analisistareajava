@@ -929,7 +929,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jLabel74.setText("ID");
 
-        jTextIDVentas.setEnabled(false);
+        jTextIDVentas.setEditable(false);
         jTextIDVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIDVentasActionPerformed(evt);
@@ -1267,7 +1267,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void jButtonVerDetallesVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerDetallesVentasActionPerformed
         DetallesVentaView dv= new DetallesVentaView(jTextIDVentas.getText());
         dv.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButtonVerDetallesVentasActionPerformed
 
     private void jTextIDVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDVentasActionPerformed

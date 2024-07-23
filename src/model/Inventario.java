@@ -54,7 +54,7 @@ public class Inventario {
         ArrayList<Inventario> p = new ArrayList<>();
         String sql = "SELECT i.CodigoItemInventario, p.NombreProducto, i.CodigoProveedor, "
                 + "i.FechaEntrega, i.Stock, "
-                + "CASE WHEN i.Stock < 5 THEN 'Reabastecer' ELSE 'Suficiente Stock' END AS Estado , i.FechaSalida "
+                + "CASE WHEN i.Stock < 5 THEN 'Necesita Reabastecer' ELSE 'Suficiente Stock' END AS Estado "
                 + "FROM inventario i "
                 + "JOIN producto p ON i.CodigoProducto = p.CodigoProducto";
 
@@ -69,7 +69,7 @@ public class Inventario {
                 i.FechaEntrega = rs.getDate("FechaEntrega");
                 i.Stock = rs.getInt("Stock");
                 i.Estado = rs.getString("Estado");
-                i.FechaSalida = rs.getString("FechaSalida");
+                
                 p.add(i);
             }
         } catch (SQLException e) {

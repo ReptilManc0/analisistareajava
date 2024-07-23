@@ -42,7 +42,7 @@
                           <Component id="jScrollPane5" min="-2" pref="1023" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -131,7 +131,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="VERIFICAR DISPONIBILIDAD DE PRODUCTOS"/>
+            <Property name="text" type="java.lang.String" value="DETALLES DE VENTA"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -36,9 +36,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="jButton21" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace pref="59" max="32767" attributes="0"/>
+=======
+              <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 37b6701e85fc24a6e139dd761e84c2572de6619d
           </Group>
       </Group>
     </DimensionLayout>
