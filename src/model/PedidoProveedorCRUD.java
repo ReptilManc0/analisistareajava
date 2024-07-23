@@ -14,12 +14,12 @@ import javax.swing.JOptionPane;
 
 public class PedidoProveedorCRUD {
 
-    Connection  conexion = Conexion.obtenerConexion();
+    
     
 
     PreparedStatement ps;
     ResultSet rs;
-    
+    Connection  conexion = Conexion.obtenerConexion();
     public List listar() {
         List<PedidoProveedor> datos = new ArrayList<>();
         String sql ="Select * from pedidoproveedor";

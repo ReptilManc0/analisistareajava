@@ -11,7 +11,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
     public InicioDeSesion() {
         initComponents();        
         setLocationRelativeTo(null);
-        setTitle("Detalles Giraldo");
+        setTitle("Tiendita de Lupita");
         setResizable(false);
         Font font = new Font("Georgia",Font.ITALIC, 14);
         UIManager.put("OptionPane.messageFont", font);
