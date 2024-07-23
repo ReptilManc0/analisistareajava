@@ -27,6 +27,7 @@ public class ControlarPedidoProveedor implements ActionListener{
     DefaultTableModel modelo = new DefaultTableModel();
 
     public ControlarPedidoProveedor(PedidoProveedorview v) {
+        v.setVisible(true);
         this.vista= v;
         this.vista.BtnListar.addActionListener(this);
         this.vista.BtnEnviar.addActionListener(this);

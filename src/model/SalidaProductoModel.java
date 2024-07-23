@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 public class SalidaProductoModel {
-    
+    Connection  conn = Conexion.obtenerConexion();
     public List<Map<String, Object>> obtenerVentas() {
         List<Map<String, Object>> ventas = new ArrayList<>();
         String sql = "SELECT v.CodigoVenta, c.NombreCliente, v.FechaVenta " +
@@ -24,6 +24,8 @@ public class SalidaProductoModel {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexion.cerrarConexion(conn);
         }
         return ventas;
     }
@@ -48,6 +50,8 @@ public class SalidaProductoModel {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexion.cerrarConexion(conn);
         }
         return detalles;
     }
@@ -68,6 +72,8 @@ public class SalidaProductoModel {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexion.cerrarConexion(conn);
         }
         return empleados;
     }
@@ -91,6 +97,8 @@ public class SalidaProductoModel {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexion.cerrarConexion(conn);
         }
         return productos;
     }

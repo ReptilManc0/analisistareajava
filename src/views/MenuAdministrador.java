@@ -4,6 +4,9 @@ import Controllers.VentanaPrincipalController;
 import model.Clientes;
 import model.Productos;
 import model.Ventas;
+import Controllers.ControlarPedidoProveedor;
+import model.PedidoProveedorCRUD;
+import model.PedidoProveedor;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
@@ -1237,8 +1240,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         PedidoProveedorview v = new PedidoProveedorview();
-        v.setVisible(true);
+        ControlarPedidoProveedor c = new ControlarPedidoProveedor(v);        
         this.dispose();
+        
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed

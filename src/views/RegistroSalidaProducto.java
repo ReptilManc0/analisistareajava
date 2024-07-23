@@ -43,7 +43,8 @@ public class RegistroSalidaProducto extends javax.swing.JFrame {
         cargarVentas();
         cargarEmpleados();
         cargarProductos();
-
+        
+        spnCantidad.setValue(1);
         // Agregar listeners
         cmbCodigoVenta.addActionListener(e -> actualizarDetallesVenta());
         cmbCodigoEmpleado.addActionListener(e -> actualizarNombreEmpleado());
@@ -252,8 +253,8 @@ public class RegistroSalidaProducto extends javax.swing.JFrame {
         getContentPane().add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 90, -1));
 
         jLabel11.setText("Cantidad");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, -1, 20));
-        getContentPane().add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 360, -1, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, -1, 20));
+        getContentPane().add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 360, -1, 30));
 
         btnAgregarProducto.setText("Agregar Producto");
         btnAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
